@@ -63,9 +63,9 @@ namespace EnviaTrocas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap troca {
+        internal static System.Drawing.Bitmap fornecedor {
             get {
-                object obj = ResourceManager.GetObject("troca", resourceCulture);
+                object obj = ResourceManager.GetObject("fornecedor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,19 @@ namespace EnviaTrocas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap troca1 {
+        internal static System.Drawing.Bitmap produto {
             get {
-                object obj = ResourceManager.GetObject("troca1", resourceCulture);
+                object obj = ResourceManager.GetObject("produto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap troca {
+            get {
+                object obj = ResourceManager.GetObject("troca", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

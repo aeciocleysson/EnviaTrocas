@@ -29,6 +29,7 @@ namespace EnviaTrocas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.tbcTroca = new System.Windows.Forms.TabControl();
             this.tblRegistrarTroca = new System.Windows.Forms.TabPage();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -57,11 +58,39 @@ namespace EnviaTrocas
             this.txtCodeExchange = new System.Windows.Forms.TextBox();
             this.dgvRegister = new System.Windows.Forms.DataGridView();
             this.tblProduto = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtpesquisar = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtBrand = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.tblFornecedor = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnSaveProvider = new System.Windows.Forms.Button();
+            this.btnExcluirProvider = new System.Windows.Forms.Button();
+            this.btnCancelarProvider = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtNameRegProvider = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtCodeRegProvider = new System.Windows.Forms.TextBox();
+            this.dgvProvider = new System.Windows.Forms.DataGridView();
             this.tbcTroca.SuspendLayout();
             this.tblRegistrarTroca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegister)).BeginInit();
+            this.tblProduto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
+            this.tblFornecedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tbcTroca
@@ -117,7 +146,7 @@ namespace EnviaTrocas
             // 
             this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox.ErrorImage = null;
-            this.pictureBox.Image = global::EnviaTrocas.Properties.Resources.troca1;
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.Location = new System.Drawing.Point(922, 19);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(129, 109);
@@ -200,6 +229,7 @@ namespace EnviaTrocas
             this.btnCancel.TabIndex = 28;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
             // 
@@ -350,6 +380,19 @@ namespace EnviaTrocas
             // tblProduto
             // 
             this.tblProduto.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tblProduto.Controls.Add(this.pictureBox1);
+            this.tblProduto.Controls.Add(this.button1);
+            this.tblProduto.Controls.Add(this.btnExcluir);
+            this.tblProduto.Controls.Add(this.button2);
+            this.tblProduto.Controls.Add(this.label12);
+            this.tblProduto.Controls.Add(this.txtpesquisar);
+            this.tblProduto.Controls.Add(this.label11);
+            this.tblProduto.Controls.Add(this.txtDescription);
+            this.tblProduto.Controls.Add(this.label10);
+            this.tblProduto.Controls.Add(this.txtBrand);
+            this.tblProduto.Controls.Add(this.label9);
+            this.tblProduto.Controls.Add(this.txtCode);
+            this.tblProduto.Controls.Add(this.dgvProducts);
             this.tblProduto.Location = new System.Drawing.Point(4, 22);
             this.tblProduto.Name = "tblProduto";
             this.tblProduto.Padding = new System.Windows.Forms.Padding(3);
@@ -357,15 +400,253 @@ namespace EnviaTrocas
             this.tblProduto.TabIndex = 1;
             this.tblProduto.Text = "Cadastrar Produtos";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Image = global::EnviaTrocas.Properties.Resources.produto;
+            this.pictureBox1.Location = new System.Drawing.Point(922, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(129, 109);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(817, 198);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Salvar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcluir.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Location = new System.Drawing.Point(898, 198);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.TabIndex = 11;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(979, 198);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Cancelar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 195);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(55, 14);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Pesquisar";
+            // 
+            // txtpesquisar
+            // 
+            this.txtpesquisar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtpesquisar.Location = new System.Drawing.Point(103, 192);
+            this.txtpesquisar.Name = "txtpesquisar";
+            this.txtpesquisar.Size = new System.Drawing.Size(470, 20);
+            this.txtpesquisar.TabIndex = 8;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 74);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 14);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Descrição";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescription.Location = new System.Drawing.Point(103, 71);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(342, 20);
+            this.txtDescription.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 48);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 14);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Marca";
+            // 
+            // txtBrand
+            // 
+            this.txtBrand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBrand.Location = new System.Drawing.Point(103, 45);
+            this.txtBrand.Name = "txtBrand";
+            this.txtBrand.Size = new System.Drawing.Size(228, 20);
+            this.txtBrand.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(6, 21);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 14);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Cód. Produto";
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(103, 19);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.ReadOnly = true;
+            this.txtCode.Size = new System.Drawing.Size(100, 20);
+            this.txtCode.TabIndex = 2;
+            this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dgvProducts
+            // 
+            this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProducts.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducts.Location = new System.Drawing.Point(6, 228);
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProducts.Size = new System.Drawing.Size(1057, 239);
+            this.dgvProducts.TabIndex = 1;
+            // 
             // tblFornecedor
             // 
             this.tblFornecedor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tblFornecedor.Controls.Add(this.pictureBox2);
+            this.tblFornecedor.Controls.Add(this.btnSaveProvider);
+            this.tblFornecedor.Controls.Add(this.btnExcluirProvider);
+            this.tblFornecedor.Controls.Add(this.btnCancelarProvider);
+            this.tblFornecedor.Controls.Add(this.label13);
+            this.tblFornecedor.Controls.Add(this.txtNameRegProvider);
+            this.tblFornecedor.Controls.Add(this.label14);
+            this.tblFornecedor.Controls.Add(this.txtCodeRegProvider);
+            this.tblFornecedor.Controls.Add(this.dgvProvider);
             this.tblFornecedor.Location = new System.Drawing.Point(4, 22);
             this.tblFornecedor.Name = "tblFornecedor";
             this.tblFornecedor.Padding = new System.Windows.Forms.Padding(3);
             this.tblFornecedor.Size = new System.Drawing.Size(1069, 473);
             this.tblFornecedor.TabIndex = 2;
             this.tblFornecedor.Text = "Cadastrar Fornecedor";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.ErrorImage = null;
+            this.pictureBox2.Image = global::EnviaTrocas.Properties.Resources.fornecedor;
+            this.pictureBox2.Location = new System.Drawing.Point(922, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(129, 109);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 37;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnSaveProvider
+            // 
+            this.btnSaveProvider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveProvider.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveProvider.Location = new System.Drawing.Point(817, 198);
+            this.btnSaveProvider.Name = "btnSaveProvider";
+            this.btnSaveProvider.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveProvider.TabIndex = 8;
+            this.btnSaveProvider.Text = "Salvar";
+            this.btnSaveProvider.UseVisualStyleBackColor = true;
+            this.btnSaveProvider.Click += new System.EventHandler(this.btnSaveProvider_Click);
+            // 
+            // btnExcluirProvider
+            // 
+            this.btnExcluirProvider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcluirProvider.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluirProvider.Location = new System.Drawing.Point(898, 198);
+            this.btnExcluirProvider.Name = "btnExcluirProvider";
+            this.btnExcluirProvider.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluirProvider.TabIndex = 9;
+            this.btnExcluirProvider.Text = "Excluir";
+            this.btnExcluirProvider.UseVisualStyleBackColor = true;
+            this.btnExcluirProvider.Click += new System.EventHandler(this.btnExcluirProvider_Click);
+            // 
+            // btnCancelarProvider
+            // 
+            this.btnCancelarProvider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelarProvider.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarProvider.Location = new System.Drawing.Point(979, 198);
+            this.btnCancelarProvider.Name = "btnCancelarProvider";
+            this.btnCancelarProvider.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarProvider.TabIndex = 10;
+            this.btnCancelarProvider.Text = "Cancelar";
+            this.btnCancelarProvider.UseVisualStyleBackColor = true;
+            this.btnCancelarProvider.Click += new System.EventHandler(this.btnCancelarProvider_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 48);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(34, 14);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Nome";
+            // 
+            // txtNameRegProvider
+            // 
+            this.txtNameRegProvider.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNameRegProvider.Location = new System.Drawing.Point(103, 45);
+            this.txtNameRegProvider.Name = "txtNameRegProvider";
+            this.txtNameRegProvider.Size = new System.Drawing.Size(373, 20);
+            this.txtNameRegProvider.TabIndex = 5;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(6, 21);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 14);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Código";
+            // 
+            // txtCodeRegProvider
+            // 
+            this.txtCodeRegProvider.Location = new System.Drawing.Point(103, 19);
+            this.txtCodeRegProvider.Name = "txtCodeRegProvider";
+            this.txtCodeRegProvider.ReadOnly = true;
+            this.txtCodeRegProvider.Size = new System.Drawing.Size(100, 20);
+            this.txtCodeRegProvider.TabIndex = 4;
+            this.txtCodeRegProvider.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dgvProvider
+            // 
+            this.dgvProvider.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProvider.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProvider.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProvider.Location = new System.Drawing.Point(6, 228);
+            this.dgvProvider.Name = "dgvProvider";
+            this.dgvProvider.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProvider.Size = new System.Drawing.Size(1057, 239);
+            this.dgvProvider.TabIndex = 1;
             // 
             // FrmPrincipal
             // 
@@ -382,6 +663,14 @@ namespace EnviaTrocas
             this.tblRegistrarTroca.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegister)).EndInit();
+            this.tblProduto.ResumeLayout(false);
+            this.tblProduto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
+            this.tblFornecedor.ResumeLayout(false);
+            this.tblFornecedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -417,6 +706,28 @@ namespace EnviaTrocas
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCodeItens;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.DataGridView dgvProducts;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtBrand;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtpesquisar;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dgvProvider;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtNameRegProvider;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtCodeRegProvider;
+        private System.Windows.Forms.Button btnSaveProvider;
+        private System.Windows.Forms.Button btnExcluirProvider;
+        private System.Windows.Forms.Button btnCancelarProvider;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
