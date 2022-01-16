@@ -180,6 +180,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DataContext.cs" />
+    <Compile Include="FrmListProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListProduct.Designer.cs">
+      <DependentUpon>FrmListProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmListProvider.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,12 @@
     <Compile Include="ViewModel\ProviderViewModel.cs" />
     <Compile Include="ViewModel\RegisterItensViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
+    <EmbeddedResource Include="FrmListProduct.resx">
+      <DependentUpon>FrmListProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListProvider.resx">
+      <DependentUpon>FrmListProvider.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>

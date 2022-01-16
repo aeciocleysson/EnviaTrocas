@@ -1,7 +1,7 @@
 ﻿
 namespace EnviaTrocas
 {
-    partial class FrmListProvider
+    partial class FrmListProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -31,19 +31,19 @@ namespace EnviaTrocas
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.dgvListProvider = new System.Windows.Forms.DataGridView();
+            this.dgvListProducts = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnClose);
-            this.groupBox1.Controls.Add(this.dgvListProvider);
+            this.groupBox1.Controls.Add(this.dgvListProducts);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(608, 325);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // btnClose
@@ -57,30 +57,30 @@ namespace EnviaTrocas
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // dgvListProvider
+            // dgvListProducts
             // 
-            this.dgvListProvider.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvListProvider.BackgroundColor = System.Drawing.Color.White;
-            this.dgvListProvider.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListProvider.Location = new System.Drawing.Point(5, 48);
-            this.dgvListProvider.Name = "dgvListProvider";
-            this.dgvListProvider.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListProvider.Size = new System.Drawing.Size(597, 271);
-            this.dgvListProvider.TabIndex = 0;
-            this.dgvListProvider.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListProvider_CellDoubleClick);
+            this.dgvListProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListProducts.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListProducts.Location = new System.Drawing.Point(5, 48);
+            this.dgvListProducts.Name = "dgvListProducts";
+            this.dgvListProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListProducts.Size = new System.Drawing.Size(597, 271);
+            this.dgvListProducts.TabIndex = 0;
+            this.dgvListProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListProducts_CellDoubleClick);
             // 
-            // FrmListProvider
+            // FrmListProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 349);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmListProvider";
+            this.Name = "FrmListProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmListProvider";
+            this.Text = "FrmListProduct";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -89,6 +89,6 @@ namespace EnviaTrocas
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnClose;
-        public System.Windows.Forms.DataGridView dgvListProvider;
+        public System.Windows.Forms.DataGridView dgvListProducts;
     }
 }

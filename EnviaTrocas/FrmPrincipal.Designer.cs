@@ -32,9 +32,8 @@ namespace EnviaTrocas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.tbcTroca = new System.Windows.Forms.TabControl();
             this.tblRegistrarTroca = new System.Windows.Forms.TabPage();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dtData = new System.Windows.Forms.MaskedTextBox();
+            this.dtDataRegister = new System.Windows.Forms.MaskedTextBox();
             this.btnExchange = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCodeItens = new System.Windows.Forms.TextBox();
@@ -58,21 +57,19 @@ namespace EnviaTrocas
             this.txtCodeExchange = new System.Windows.Forms.TextBox();
             this.dgvRegister = new System.Windows.Forms.DataGridView();
             this.tblProduto = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSaveProduct = new System.Windows.Forms.Button();
+            this.btnExcluirProduct = new System.Windows.Forms.Button();
+            this.btnCancelProduct = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtpesquisar = new System.Windows.Forms.TextBox();
+            this.txtpesquisarProduct = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtRegDescProduct = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtBrand = new System.Windows.Forms.TextBox();
+            this.txtRegBrand = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
+            this.txtCodeRegProduct = new System.Windows.Forms.TextBox();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.tblFornecedor = new System.Windows.Forms.TabPage();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSaveProvider = new System.Windows.Forms.Button();
             this.btnExcluirProvider = new System.Windows.Forms.Button();
             this.btnCancelarProvider = new System.Windows.Forms.Button();
@@ -81,16 +78,19 @@ namespace EnviaTrocas
             this.label14 = new System.Windows.Forms.Label();
             this.txtCodeRegProvider = new System.Windows.Forms.TextBox();
             this.dgvProvider = new System.Windows.Forms.DataGridView();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tbcTroca.SuspendLayout();
             this.tblRegistrarTroca.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegister)).BeginInit();
             this.tblProduto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.tblFornecedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tbcTroca
@@ -112,7 +112,7 @@ namespace EnviaTrocas
             this.tblRegistrarTroca.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tblRegistrarTroca.Controls.Add(this.pictureBox);
             this.tblRegistrarTroca.Controls.Add(this.label8);
-            this.tblRegistrarTroca.Controls.Add(this.dtData);
+            this.tblRegistrarTroca.Controls.Add(this.dtDataRegister);
             this.tblRegistrarTroca.Controls.Add(this.btnExchange);
             this.tblRegistrarTroca.Controls.Add(this.label7);
             this.tblRegistrarTroca.Controls.Add(this.txtCodeItens);
@@ -142,18 +142,6 @@ namespace EnviaTrocas
             this.tblRegistrarTroca.TabIndex = 0;
             this.tblRegistrarTroca.Text = "Registrar Trocas";
             // 
-            // pictureBox
-            // 
-            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox.ErrorImage = null;
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(922, 19);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(129, 109);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 35;
-            this.pictureBox.TabStop = false;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -163,18 +151,19 @@ namespace EnviaTrocas
             this.label8.TabIndex = 34;
             this.label8.Text = "Cód. Troca";
             // 
-            // dtData
+            // dtDataRegister
             // 
-            this.dtData.Location = new System.Drawing.Point(103, 19);
-            this.dtData.Mask = "00/00/0000";
-            this.dtData.Name = "dtData";
-            this.dtData.ReadOnly = true;
-            this.dtData.Size = new System.Drawing.Size(100, 20);
-            this.dtData.TabIndex = 33;
-            this.dtData.ValidatingType = typeof(System.DateTime);
+            this.dtDataRegister.Location = new System.Drawing.Point(103, 19);
+            this.dtDataRegister.Mask = "00/00/0000";
+            this.dtDataRegister.Name = "dtDataRegister";
+            this.dtDataRegister.ReadOnly = true;
+            this.dtDataRegister.Size = new System.Drawing.Size(100, 20);
+            this.dtDataRegister.TabIndex = 33;
+            this.dtDataRegister.ValidatingType = typeof(System.DateTime);
             // 
             // btnExchange
             // 
+            this.btnExchange.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExchange.Location = new System.Drawing.Point(209, 43);
             this.btnExchange.Name = "btnExchange";
             this.btnExchange.Size = new System.Drawing.Size(75, 23);
@@ -203,6 +192,7 @@ namespace EnviaTrocas
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(817, 198);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
@@ -213,6 +203,7 @@ namespace EnviaTrocas
             // btnPrinter
             // 
             this.btnPrinter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrinter.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrinter.Location = new System.Drawing.Point(898, 198);
             this.btnPrinter.Name = "btnPrinter";
             this.btnPrinter.Size = new System.Drawing.Size(75, 23);
@@ -223,6 +214,7 @@ namespace EnviaTrocas
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(979, 198);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
@@ -233,6 +225,7 @@ namespace EnviaTrocas
             // 
             // btnAdd
             // 
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(209, 199);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
@@ -259,12 +252,14 @@ namespace EnviaTrocas
             // 
             // btnProduct
             // 
-            this.btnProduct.Location = new System.Drawing.Point(209, 147);
+            this.btnProduct.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduct.Location = new System.Drawing.Point(390, 174);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(75, 23);
             this.btnProduct.TabIndex = 20;
             this.btnProduct.Text = "Buscar";
             this.btnProduct.UseVisualStyleBackColor = true;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // label4
             // 
@@ -303,12 +298,14 @@ namespace EnviaTrocas
             // 
             // btnProvider
             // 
+            this.btnProvider.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProvider.Location = new System.Drawing.Point(390, 121);
             this.btnProvider.Name = "btnProvider";
             this.btnProvider.Size = new System.Drawing.Size(75, 23);
             this.btnProvider.TabIndex = 15;
             this.btnProvider.Text = "Buscar";
             this.btnProvider.UseVisualStyleBackColor = true;
+            this.btnProvider.Click += new System.EventHandler(this.btnProvider_Click);
             // 
             // txtNameProvider
             // 
@@ -369,6 +366,7 @@ namespace EnviaTrocas
             this.dgvRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvRegister.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRegister.BackgroundColor = System.Drawing.Color.White;
             this.dgvRegister.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegister.Location = new System.Drawing.Point(6, 228);
@@ -381,17 +379,17 @@ namespace EnviaTrocas
             // 
             this.tblProduto.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tblProduto.Controls.Add(this.pictureBox1);
-            this.tblProduto.Controls.Add(this.button1);
-            this.tblProduto.Controls.Add(this.btnExcluir);
-            this.tblProduto.Controls.Add(this.button2);
+            this.tblProduto.Controls.Add(this.btnSaveProduct);
+            this.tblProduto.Controls.Add(this.btnExcluirProduct);
+            this.tblProduto.Controls.Add(this.btnCancelProduct);
             this.tblProduto.Controls.Add(this.label12);
-            this.tblProduto.Controls.Add(this.txtpesquisar);
+            this.tblProduto.Controls.Add(this.txtpesquisarProduct);
             this.tblProduto.Controls.Add(this.label11);
-            this.tblProduto.Controls.Add(this.txtDescription);
+            this.tblProduto.Controls.Add(this.txtRegDescProduct);
             this.tblProduto.Controls.Add(this.label10);
-            this.tblProduto.Controls.Add(this.txtBrand);
+            this.tblProduto.Controls.Add(this.txtRegBrand);
             this.tblProduto.Controls.Add(this.label9);
-            this.tblProduto.Controls.Add(this.txtCode);
+            this.tblProduto.Controls.Add(this.txtCodeRegProduct);
             this.tblProduto.Controls.Add(this.dgvProducts);
             this.tblProduto.Location = new System.Drawing.Point(4, 22);
             this.tblProduto.Name = "tblProduto";
@@ -400,50 +398,41 @@ namespace EnviaTrocas
             this.tblProduto.TabIndex = 1;
             this.tblProduto.Text = "Cadastrar Produtos";
             // 
-            // pictureBox1
+            // btnSaveProduct
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = global::EnviaTrocas.Properties.Resources.produto;
-            this.pictureBox1.Location = new System.Drawing.Point(922, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 109);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
+            this.btnSaveProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveProduct.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveProduct.Location = new System.Drawing.Point(817, 198);
+            this.btnSaveProduct.Name = "btnSaveProduct";
+            this.btnSaveProduct.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveProduct.TabIndex = 10;
+            this.btnSaveProduct.Text = "Salvar";
+            this.btnSaveProduct.UseVisualStyleBackColor = true;
+            this.btnSaveProduct.Click += new System.EventHandler(this.btnSaveProduct_Click);
             // 
-            // button1
+            // btnExcluirProduct
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(817, 198);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnExcluirProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcluirProduct.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluirProduct.Location = new System.Drawing.Point(898, 198);
+            this.btnExcluirProduct.Name = "btnExcluirProduct";
+            this.btnExcluirProduct.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluirProduct.TabIndex = 11;
+            this.btnExcluirProduct.Text = "Excluir";
+            this.btnExcluirProduct.UseVisualStyleBackColor = true;
+            this.btnExcluirProduct.Click += new System.EventHandler(this.btnExcluirProduct_Click);
             // 
-            // btnExcluir
+            // btnCancelProduct
             // 
-            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcluir.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(898, 198);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 11;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(979, 198);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelProduct.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelProduct.Location = new System.Drawing.Point(979, 198);
+            this.btnCancelProduct.Name = "btnCancelProduct";
+            this.btnCancelProduct.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelProduct.TabIndex = 12;
+            this.btnCancelProduct.Text = "Cancelar";
+            this.btnCancelProduct.UseVisualStyleBackColor = true;
+            this.btnCancelProduct.Click += new System.EventHandler(this.btnCancelProduct_Click);
             // 
             // label12
             // 
@@ -455,13 +444,14 @@ namespace EnviaTrocas
             this.label12.TabIndex = 9;
             this.label12.Text = "Pesquisar";
             // 
-            // txtpesquisar
+            // txtpesquisarProduct
             // 
-            this.txtpesquisar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtpesquisar.Location = new System.Drawing.Point(103, 192);
-            this.txtpesquisar.Name = "txtpesquisar";
-            this.txtpesquisar.Size = new System.Drawing.Size(470, 20);
-            this.txtpesquisar.TabIndex = 8;
+            this.txtpesquisarProduct.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtpesquisarProduct.Location = new System.Drawing.Point(103, 192);
+            this.txtpesquisarProduct.Name = "txtpesquisarProduct";
+            this.txtpesquisarProduct.Size = new System.Drawing.Size(470, 20);
+            this.txtpesquisarProduct.TabIndex = 8;
+            this.txtpesquisarProduct.TextChanged += new System.EventHandler(this.txtpesquisarProduct_TextChanged);
             // 
             // label11
             // 
@@ -473,13 +463,13 @@ namespace EnviaTrocas
             this.label11.TabIndex = 7;
             this.label11.Text = "Descrição";
             // 
-            // txtDescription
+            // txtRegDescProduct
             // 
-            this.txtDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDescription.Location = new System.Drawing.Point(103, 71);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(342, 20);
-            this.txtDescription.TabIndex = 6;
+            this.txtRegDescProduct.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtRegDescProduct.Location = new System.Drawing.Point(103, 71);
+            this.txtRegDescProduct.Name = "txtRegDescProduct";
+            this.txtRegDescProduct.Size = new System.Drawing.Size(342, 20);
+            this.txtRegDescProduct.TabIndex = 6;
             // 
             // label10
             // 
@@ -491,13 +481,13 @@ namespace EnviaTrocas
             this.label10.TabIndex = 5;
             this.label10.Text = "Marca";
             // 
-            // txtBrand
+            // txtRegBrand
             // 
-            this.txtBrand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBrand.Location = new System.Drawing.Point(103, 45);
-            this.txtBrand.Name = "txtBrand";
-            this.txtBrand.Size = new System.Drawing.Size(228, 20);
-            this.txtBrand.TabIndex = 4;
+            this.txtRegBrand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtRegBrand.Location = new System.Drawing.Point(103, 45);
+            this.txtRegBrand.Name = "txtRegBrand";
+            this.txtRegBrand.Size = new System.Drawing.Size(228, 20);
+            this.txtRegBrand.TabIndex = 4;
             // 
             // label9
             // 
@@ -509,20 +499,21 @@ namespace EnviaTrocas
             this.label9.TabIndex = 3;
             this.label9.Text = "Cód. Produto";
             // 
-            // txtCode
+            // txtCodeRegProduct
             // 
-            this.txtCode.Location = new System.Drawing.Point(103, 19);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.ReadOnly = true;
-            this.txtCode.Size = new System.Drawing.Size(100, 20);
-            this.txtCode.TabIndex = 2;
-            this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCodeRegProduct.Location = new System.Drawing.Point(103, 19);
+            this.txtCodeRegProduct.Name = "txtCodeRegProduct";
+            this.txtCodeRegProduct.ReadOnly = true;
+            this.txtCodeRegProduct.Size = new System.Drawing.Size(100, 20);
+            this.txtCodeRegProduct.TabIndex = 2;
+            this.txtCodeRegProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dgvProducts
             // 
             this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProducts.BackgroundColor = System.Drawing.Color.White;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Location = new System.Drawing.Point(6, 228);
@@ -530,6 +521,8 @@ namespace EnviaTrocas
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProducts.Size = new System.Drawing.Size(1057, 239);
             this.dgvProducts.TabIndex = 1;
+            this.dgvProducts.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellDoubleClick);
+            this.dgvProducts.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvProducts_KeyUp);
             // 
             // tblFornecedor
             // 
@@ -549,18 +542,6 @@ namespace EnviaTrocas
             this.tblFornecedor.Size = new System.Drawing.Size(1069, 473);
             this.tblFornecedor.TabIndex = 2;
             this.tblFornecedor.Text = "Cadastrar Fornecedor";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.ErrorImage = null;
-            this.pictureBox2.Image = global::EnviaTrocas.Properties.Resources.fornecedor;
-            this.pictureBox2.Location = new System.Drawing.Point(922, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(129, 109);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 37;
-            this.pictureBox2.TabStop = false;
             // 
             // btnSaveProvider
             // 
@@ -640,6 +621,7 @@ namespace EnviaTrocas
             this.dgvProvider.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProvider.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProvider.BackgroundColor = System.Drawing.Color.White;
             this.dgvProvider.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProvider.Location = new System.Drawing.Point(6, 228);
@@ -647,6 +629,44 @@ namespace EnviaTrocas
             this.dgvProvider.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProvider.Size = new System.Drawing.Size(1057, 239);
             this.dgvProvider.TabIndex = 1;
+            this.dgvProvider.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProvider_CellDoubleClick);
+            this.dgvProvider.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvProvider_KeyUp);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox.ErrorImage = null;
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(922, 19);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(129, 109);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 35;
+            this.pictureBox.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Image = global::EnviaTrocas.Properties.Resources.produto;
+            this.pictureBox1.Location = new System.Drawing.Point(922, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(129, 109);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.ErrorImage = null;
+            this.pictureBox2.Image = global::EnviaTrocas.Properties.Resources.fornecedor;
+            this.pictureBox2.Location = new System.Drawing.Point(922, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(129, 109);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 37;
+            this.pictureBox2.TabStop = false;
             // 
             // FrmPrincipal
             // 
@@ -661,16 +681,16 @@ namespace EnviaTrocas
             this.tbcTroca.ResumeLayout(false);
             this.tblRegistrarTroca.ResumeLayout(false);
             this.tblRegistrarTroca.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegister)).EndInit();
             this.tblProduto.ResumeLayout(false);
             this.tblProduto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.tblFornecedor.ResumeLayout(false);
             this.tblFornecedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -701,23 +721,23 @@ namespace EnviaTrocas
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCodeExchange;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox dtData;
+        private System.Windows.Forms.MaskedTextBox dtDataRegister;
         private System.Windows.Forms.Button btnExchange;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCodeItens;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtBrand;
+        private System.Windows.Forms.TextBox txtRegBrand;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtCode;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtCodeRegProduct;
+        private System.Windows.Forms.Button btnSaveProduct;
+        private System.Windows.Forms.Button btnExcluirProduct;
+        private System.Windows.Forms.Button btnCancelProduct;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtpesquisar;
+        private System.Windows.Forms.TextBox txtpesquisarProduct;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.TextBox txtRegDescProduct;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgvProvider;
         private System.Windows.Forms.Label label13;
