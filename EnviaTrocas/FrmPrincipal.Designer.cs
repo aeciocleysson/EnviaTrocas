@@ -170,6 +170,7 @@ namespace EnviaTrocas
             this.btnExchange.TabIndex = 32;
             this.btnExchange.Text = "Buscar";
             this.btnExchange.UseVisualStyleBackColor = true;
+            this.btnExchange.Click += new System.EventHandler(this.btnExchange_Click);
             // 
             // label7
             // 
@@ -182,7 +183,7 @@ namespace EnviaTrocas
             // 
             // txtCodeItens
             // 
-            this.txtCodeItens.Location = new System.Drawing.Point(103, 45);
+            this.txtCodeItens.Location = new System.Drawing.Point(103, 71);
             this.txtCodeItens.Name = "txtCodeItens";
             this.txtCodeItens.ReadOnly = true;
             this.txtCodeItens.Size = new System.Drawing.Size(100, 20);
@@ -232,6 +233,7 @@ namespace EnviaTrocas
             this.btnAdd.TabIndex = 25;
             this.btnAdd.Text = "Adicionar";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label5
             // 
@@ -353,7 +355,7 @@ namespace EnviaTrocas
             // 
             // txtCodeExchange
             // 
-            this.txtCodeExchange.Location = new System.Drawing.Point(103, 71);
+            this.txtCodeExchange.Location = new System.Drawing.Point(103, 45);
             this.txtCodeExchange.Name = "txtCodeExchange";
             this.txtCodeExchange.ReadOnly = true;
             this.txtCodeExchange.Size = new System.Drawing.Size(100, 20);
@@ -374,6 +376,8 @@ namespace EnviaTrocas
             this.dgvRegister.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRegister.Size = new System.Drawing.Size(1057, 239);
             this.dgvRegister.TabIndex = 5;
+            this.dgvRegister.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegister_CellDoubleClick);
+            this.dgvRegister.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvRegister_KeyUp);
             // 
             // tblProduto
             // 

@@ -10,6 +10,7 @@ namespace EnviaTrocas
     public partial class FrmPrincipal : Form
     {
         private DataContext _context;
+        private const string LogMessage = "Foram inseridos mais de 1 item na lista de trocas.";
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -281,6 +282,34 @@ namespace EnviaTrocas
             txtQuantiti.Focus();
         }
 
+        private void ClearFieldsProducts()
+        {
+            txtCodeProduct.Clear();
+            txtNameProduct.Clear();
+            txtQuantiti.Clear();
+        }
+
+        private void GetRegisterById(int id)
+        {
+            id = Convert.ToInt32(txtCodeExchange.Text);
+            var result = _context.RegisterItens
+                                 .Where(w => w.IsDelete == 0 && w.RegisterId == id)
+                                 .Select(s => new
+                                 {
+                                     Codigo = s.Id,
+                                     ProdutoId = s.Product.Id,
+                                     Descricao = s.Product.Description,
+                                     Quantidade = s.Quantidade
+                                 }).ToList();
+
+            dgvRegister.DataSource = result;
+
+            dgvRegister.Columns[0].HeaderText = "Código";
+            dgvRegister.Columns[1].HeaderText = "Cod. Produto";
+            dgvRegister.Columns[2].HeaderText = "Descrição";
+            dgvRegister.Columns[3].HeaderText = "Quantidade";
+        }
+
         public void SelectProvider()
         {
             var provider = new FrmListProvider();
@@ -309,6 +338,104 @@ namespace EnviaTrocas
 
                 txtQuantiti.Focus();
                 txtQuantiti.Select();
+            }
+        }
+
+        public void InsertRegister(RegisterViewModel registerViewModel)
+        {
+            if (!string.IsNullOrEmpty(txtCodeProvider.Text) && dtDataRegister.Text == "  /  /")
+            {
+                if (string.IsNullOrEmpty(txtCodeExchange.Text))
+                {
+                    registerViewModel.ProviderId = Convert.ToInt32(txtCodeProvider.Text);
+
+                    var registerModel = new Register(providerId: registerViewModel.ProviderId);
+
+                    _context.Add(registerModel);
+                    _context.SaveChanges();
+
+                    var result = _context.Register.Where(w => w.IsDelete == 0).OrderBy(o => o.Id).Last();
+                    txtCodeExchange.Text = $"{result.Id}";
+                }
+                else
+                {
+                    registerViewModel.Log = LogMessage;
+                    var model = _context.Register.Find(Convert.ToInt32(txtCodeExchange.Text));
+
+                    model.UpdateRegister(log: registerViewModel.Log);
+
+                    _context.Register.Update(model);
+                    _context.SaveChanges();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um Fornecedor!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void SelectRegisters()
+        {
+            var register = new FrmListRegister();
+            register.ShowDialog();
+
+            if (register.DialogResult == DialogResult.OK)
+            {
+                var dataGrid = register.dgvListRegister.Rows[register.dgvListRegister.CurrentRow.Index];
+
+                txtCodeExchange.Text = dataGrid.Cells[0].Value.ToString();
+                dtDataRegister.Text = dataGrid.Cells[1].Value.ToString();
+                txtCodeProvider.Text = dataGrid.Cells[2].Value.ToString();
+                txtNameProvider.Text = dataGrid.Cells[3].Value.ToString();
+            }
+
+            if (!string.IsNullOrEmpty(txtCodeExchange.Text))
+                GetRegisterById(Convert.ToInt32(txtCodeExchange.Text));
+            else
+                return;
+        }
+
+        public void InsertRegisterItens(RegisterItensViewModel viewModelItens)
+        {
+            if (!string.IsNullOrEmpty(txtCodeExchange.Text) && !string.IsNullOrEmpty(txtCodeProduct.Text) && string.IsNullOrEmpty(txtCodeItens.Text))
+            {
+                viewModelItens.RegisterId = Convert.ToInt32(txtCodeExchange.Text);
+                viewModelItens.ProductId = Convert.ToInt32(txtCodeProduct.Text);
+
+                if (!string.IsNullOrEmpty(txtQuantiti.Text))
+                    viewModelItens.Quantidade = Convert.ToInt32(txtQuantiti.Text);
+                else
+                {
+                    MessageBox.Show("Digite a quantidade", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtQuantiti.Focus();
+                    txtQuantiti.Select();
+                    return;
+                }
+
+                var modelIten = new RegisterItens(registerId: viewModelItens.RegisterId, quantidade: viewModelItens.Quantidade, productId: viewModelItens.ProductId);
+
+                _context.Add(modelIten);
+                _context.SaveChanges();
+
+                GetRegisterById(Convert.ToInt32(txtCodeExchange.Text));
+                ClearFieldsProducts();
+            }else if (!string.IsNullOrEmpty(txtCodeItens.Text) && dtDataRegister.Text != "  /  /")
+            {
+                viewModelItens.ProductId = Convert.ToInt32(txtCodeProduct.Text);
+                viewModelItens.Quantidade = Convert.ToInt32(txtQuantiti.Text);
+
+                var model = _context.RegisterItens.Find(viewModelItens.Id);
+
+                model.Update(quantidade: viewModelItens.Quantidade);
+
+                _context.RegisterItens.Update(model);
+                _context.SaveChanges();
+
+                ClearFieldsProducts();
+            }
+            else
+            {
+                MessageBox.Show("Selecione o Produto!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -420,6 +547,45 @@ namespace EnviaTrocas
         private void btnProduct_Click(object sender, EventArgs e)
         {
             SelectProducts();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var viewModel = new RegisterViewModel();
+            InsertRegister(viewModel);
+            var itens = new RegisterItensViewModel();
+            InsertRegisterItens(itens);
+        }
+
+        private void dgvRegister_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var row = dgvRegister.Rows[e.RowIndex];
+
+                txtCodeItens.Text = row.Cells[0].Value.ToString();
+                txtCodeProduct.Text = row.Cells[1].Value.ToString();
+                txtNameProduct.Text = row.Cells[2].Value.ToString();
+                txtQuantiti.Text = row.Cells[3].Value.ToString();
+            }
+        }
+
+        private void dgvRegister_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (dgvRegister.CurrentRow.Index >= 0)
+            {
+                var row = dgvRegister.Rows[dgvRegister.CurrentRow.Index];
+
+                txtCodeItens.Text = row.Cells[0].Value.ToString();
+                txtCodeProduct.Text = row.Cells[1].Value.ToString();
+                txtNameProduct.Text = row.Cells[2].Value.ToString();
+                txtQuantiti.Text = row.Cells[3].Value.ToString();
+            }
+        }
+
+        private void btnExchange_Click(object sender, EventArgs e)
+        {
+            SelectRegisters();
         }
     }
 }
