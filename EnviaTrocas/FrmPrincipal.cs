@@ -367,9 +367,22 @@ namespace EnviaTrocas
                     _context.Register.Update(model);
                     _context.SaveChanges();
                 }
+            }else if (!string.IsNullOrEmpty(txtCodeProvider.Text) && dtDataRegister.Text != "  /  /")
+            {
+
+            }
+            else if (!string.IsNullOrEmpty(txtCodeItens.Text))
+            {
+                registerViewModel.Log = LogMessage;
+                var model = _context.Register.Find(Convert.ToInt32(txtCodeExchange.Text));
+
+                model.UpdateRegister(log: registerViewModel.Log);
+
+                _context.Register.Update(model);
+                _context.SaveChanges();
             }
             else
-            {
+             {
                 MessageBox.Show("Selecione um Fornecedor!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -423,6 +436,8 @@ namespace EnviaTrocas
             {
                 viewModelItens.ProductId = Convert.ToInt32(txtCodeProduct.Text);
                 viewModelItens.Quantidade = Convert.ToInt32(txtQuantiti.Text);
+                viewModelItens.RegisterId = Convert.ToInt32(txtCodeProvider.Text);
+                viewModelItens.Id = Convert.ToInt32(txtCodeItens.Text);
 
                 var model = _context.RegisterItens.Find(viewModelItens.Id);
 
@@ -431,6 +446,7 @@ namespace EnviaTrocas
                 _context.RegisterItens.Update(model);
                 _context.SaveChanges();
 
+                GetRegisterById(Convert.ToInt32(txtCodeExchange.Text));
                 ClearFieldsProducts();
             }
             else
