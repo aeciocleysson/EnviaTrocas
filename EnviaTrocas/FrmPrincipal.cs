@@ -367,7 +367,8 @@ namespace EnviaTrocas
                     _context.Register.Update(model);
                     _context.SaveChanges();
                 }
-            }else if (!string.IsNullOrEmpty(txtCodeProvider.Text) && dtDataRegister.Text != "  /  /")
+            }
+            else if (!string.IsNullOrEmpty(txtCodeProvider.Text) && dtDataRegister.Text != "  /  /")
             {
 
             }
@@ -382,7 +383,7 @@ namespace EnviaTrocas
                 _context.SaveChanges();
             }
             else
-             {
+            {
                 MessageBox.Show("Selecione um Fornecedor!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -432,7 +433,8 @@ namespace EnviaTrocas
 
                 GetRegisterById(Convert.ToInt32(txtCodeExchange.Text));
                 ClearFieldsProducts();
-            }else if (!string.IsNullOrEmpty(txtCodeItens.Text) && dtDataRegister.Text != "  /  /")
+            }
+            else if (!string.IsNullOrEmpty(txtCodeItens.Text) /*&& dtDataRegister.Text != "  /  /"*/)
             {
                 viewModelItens.ProductId = Convert.ToInt32(txtCodeProduct.Text);
                 viewModelItens.Quantidade = Convert.ToInt32(txtQuantiti.Text);
@@ -452,6 +454,31 @@ namespace EnviaTrocas
             else
             {
                 MessageBox.Show("Selecione o Produto!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DeleteItens(RegisterItensViewModel viewModelItens)
+        {
+            if (!string.IsNullOrEmpty(txtCodeItens.Text))
+            {
+                viewModelItens.ProductId = Convert.ToInt32(txtCodeProduct.Text);
+                viewModelItens.IsDelete = 1;
+                viewModelItens.RegisterId = Convert.ToInt32(txtCodeProvider.Text);
+                viewModelItens.Id = Convert.ToInt32(txtCodeItens.Text);
+
+                var model = _context.RegisterItens.Find(viewModelItens.Id);
+
+                model.Delete(isDelete: viewModelItens.IsDelete);
+
+                _context.RegisterItens.Update(model);
+                _context.SaveChanges();
+
+                GetRegisterById(Convert.ToInt32(txtCodeExchange.Text));
+                ClearFieldsProducts();
+            }
+            else
+            {
+
             }
         }
 
@@ -602,6 +629,12 @@ namespace EnviaTrocas
         private void btnExchange_Click(object sender, EventArgs e)
         {
             SelectRegisters();
+        }
+
+        private void btnDeleteRegister_Click(object sender, EventArgs e)
+        {
+            var itens = new RegisterItensViewModel();
+            DeleteItens(itens);
         }
     }
 }

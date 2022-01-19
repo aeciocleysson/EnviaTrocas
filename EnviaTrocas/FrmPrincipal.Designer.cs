@@ -32,6 +32,7 @@ namespace EnviaTrocas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.tbcTroca = new System.Windows.Forms.TabControl();
             this.tblRegistrarTroca = new System.Windows.Forms.TabPage();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dtDataRegister = new System.Windows.Forms.MaskedTextBox();
             this.btnExchange = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@ namespace EnviaTrocas
             this.txtCodeExchange = new System.Windows.Forms.TextBox();
             this.dgvRegister = new System.Windows.Forms.DataGridView();
             this.tblProduto = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSaveProduct = new System.Windows.Forms.Button();
             this.btnExcluirProduct = new System.Windows.Forms.Button();
             this.btnCancelProduct = new System.Windows.Forms.Button();
@@ -70,6 +72,7 @@ namespace EnviaTrocas
             this.txtCodeRegProduct = new System.Windows.Forms.TextBox();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.tblFornecedor = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSaveProvider = new System.Windows.Forms.Button();
             this.btnExcluirProvider = new System.Windows.Forms.Button();
             this.btnCancelarProvider = new System.Windows.Forms.Button();
@@ -78,19 +81,17 @@ namespace EnviaTrocas
             this.label14 = new System.Windows.Forms.Label();
             this.txtCodeRegProvider = new System.Windows.Forms.TextBox();
             this.dgvProvider = new System.Windows.Forms.DataGridView();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnDeleteRegister = new System.Windows.Forms.Button();
             this.tbcTroca.SuspendLayout();
             this.tblRegistrarTroca.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegister)).BeginInit();
             this.tblProduto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.tblFornecedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tbcTroca
@@ -110,6 +111,7 @@ namespace EnviaTrocas
             // tblRegistrarTroca
             // 
             this.tblRegistrarTroca.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tblRegistrarTroca.Controls.Add(this.btnDeleteRegister);
             this.tblRegistrarTroca.Controls.Add(this.pictureBox);
             this.tblRegistrarTroca.Controls.Add(this.label8);
             this.tblRegistrarTroca.Controls.Add(this.dtDataRegister);
@@ -141,6 +143,18 @@ namespace EnviaTrocas
             this.tblRegistrarTroca.Size = new System.Drawing.Size(1069, 473);
             this.tblRegistrarTroca.TabIndex = 0;
             this.tblRegistrarTroca.Text = "Registrar Trocas";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox.ErrorImage = null;
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(922, 19);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(129, 109);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 35;
+            this.pictureBox.TabStop = false;
             // 
             // label8
             // 
@@ -194,7 +208,7 @@ namespace EnviaTrocas
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(817, 198);
+            this.btnSave.Location = new System.Drawing.Point(736, 198);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 26;
@@ -402,6 +416,18 @@ namespace EnviaTrocas
             this.tblProduto.TabIndex = 1;
             this.tblProduto.Text = "Cadastrar Produtos";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Image = global::EnviaTrocas.Properties.Resources.produto;
+            this.pictureBox1.Location = new System.Drawing.Point(922, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(129, 109);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnSaveProduct
             // 
             this.btnSaveProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -547,6 +573,18 @@ namespace EnviaTrocas
             this.tblFornecedor.TabIndex = 2;
             this.tblFornecedor.Text = "Cadastrar Fornecedor";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.ErrorImage = null;
+            this.pictureBox2.Image = global::EnviaTrocas.Properties.Resources.fornecedor;
+            this.pictureBox2.Location = new System.Drawing.Point(922, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(129, 109);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 37;
+            this.pictureBox2.TabStop = false;
+            // 
             // btnSaveProvider
             // 
             this.btnSaveProvider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -636,41 +674,16 @@ namespace EnviaTrocas
             this.dgvProvider.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProvider_CellDoubleClick);
             this.dgvProvider.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvProvider_KeyUp);
             // 
-            // pictureBox
+            // btnDeleteRegister
             // 
-            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox.ErrorImage = null;
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(922, 19);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(129, 109);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 35;
-            this.pictureBox.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = global::EnviaTrocas.Properties.Resources.produto;
-            this.pictureBox1.Location = new System.Drawing.Point(922, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 109);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.ErrorImage = null;
-            this.pictureBox2.Image = global::EnviaTrocas.Properties.Resources.fornecedor;
-            this.pictureBox2.Location = new System.Drawing.Point(922, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(129, 109);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 37;
-            this.pictureBox2.TabStop = false;
+            this.btnDeleteRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteRegister.Location = new System.Drawing.Point(817, 197);
+            this.btnDeleteRegister.Name = "btnDeleteRegister";
+            this.btnDeleteRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteRegister.TabIndex = 36;
+            this.btnDeleteRegister.Text = "Deletar";
+            this.btnDeleteRegister.UseVisualStyleBackColor = true;
+            this.btnDeleteRegister.Click += new System.EventHandler(this.btnDeleteRegister_Click);
             // 
             // FrmPrincipal
             // 
@@ -685,16 +698,16 @@ namespace EnviaTrocas
             this.tbcTroca.ResumeLayout(false);
             this.tblRegistrarTroca.ResumeLayout(false);
             this.tblRegistrarTroca.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegister)).EndInit();
             this.tblProduto.ResumeLayout(false);
             this.tblProduto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.tblFornecedor.ResumeLayout(false);
             this.tblFornecedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -752,6 +765,7 @@ namespace EnviaTrocas
         private System.Windows.Forms.Button btnExcluirProvider;
         private System.Windows.Forms.Button btnCancelarProvider;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnDeleteRegister;
     }
 }
 

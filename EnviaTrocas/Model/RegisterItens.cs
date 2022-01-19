@@ -24,5 +24,11 @@ namespace EnviaTrocas.Model
             Quantidade = quantidade;
             UpdateAt = DateTime.Now;
         }
+
+        public void Delete(int isDelete)
+        {
+            IsDelete = isDelete;
+            UpdateAt = DateTime.Now;
+        }
     }
 }
