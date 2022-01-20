@@ -32,13 +32,13 @@ namespace EnviaTrocas
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.tbcTroca = new System.Windows.Forms.TabControl();
             this.tblRegistrarTroca = new System.Windows.Forms.TabPage();
+            this.btnDeleteRegister = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dtDataRegister = new System.Windows.Forms.MaskedTextBox();
             this.btnExchange = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCodeItens = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnPrinter = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -81,7 +81,7 @@ namespace EnviaTrocas
             this.label14 = new System.Windows.Forms.Label();
             this.txtCodeRegProvider = new System.Windows.Forms.TextBox();
             this.dgvProvider = new System.Windows.Forms.DataGridView();
-            this.btnDeleteRegister = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.tbcTroca.SuspendLayout();
             this.tblRegistrarTroca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -111,6 +111,7 @@ namespace EnviaTrocas
             // tblRegistrarTroca
             // 
             this.tblRegistrarTroca.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tblRegistrarTroca.Controls.Add(this.btnNovo);
             this.tblRegistrarTroca.Controls.Add(this.btnDeleteRegister);
             this.tblRegistrarTroca.Controls.Add(this.pictureBox);
             this.tblRegistrarTroca.Controls.Add(this.label8);
@@ -118,7 +119,6 @@ namespace EnviaTrocas
             this.tblRegistrarTroca.Controls.Add(this.btnExchange);
             this.tblRegistrarTroca.Controls.Add(this.label7);
             this.tblRegistrarTroca.Controls.Add(this.txtCodeItens);
-            this.tblRegistrarTroca.Controls.Add(this.btnSave);
             this.tblRegistrarTroca.Controls.Add(this.btnPrinter);
             this.tblRegistrarTroca.Controls.Add(this.btnCancel);
             this.tblRegistrarTroca.Controls.Add(this.btnAdd);
@@ -143,6 +143,17 @@ namespace EnviaTrocas
             this.tblRegistrarTroca.Size = new System.Drawing.Size(1069, 473);
             this.tblRegistrarTroca.TabIndex = 0;
             this.tblRegistrarTroca.Text = "Registrar Trocas";
+            // 
+            // btnDeleteRegister
+            // 
+            this.btnDeleteRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteRegister.Location = new System.Drawing.Point(817, 197);
+            this.btnDeleteRegister.Name = "btnDeleteRegister";
+            this.btnDeleteRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteRegister.TabIndex = 36;
+            this.btnDeleteRegister.Text = "Deletar";
+            this.btnDeleteRegister.UseVisualStyleBackColor = true;
+            this.btnDeleteRegister.Click += new System.EventHandler(this.btnDeleteRegister_Click);
             // 
             // pictureBox
             // 
@@ -204,17 +215,6 @@ namespace EnviaTrocas
             this.txtCodeItens.TabIndex = 30;
             this.txtCodeItens.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(736, 198);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 26;
-            this.btnSave.Text = "Salvar";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // btnPrinter
             // 
             this.btnPrinter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -225,6 +225,7 @@ namespace EnviaTrocas
             this.btnPrinter.TabIndex = 27;
             this.btnPrinter.Text = "Imprimir";
             this.btnPrinter.UseVisualStyleBackColor = true;
+            this.btnPrinter.Click += new System.EventHandler(this.btnPrinter_Click);
             // 
             // btnCancel
             // 
@@ -245,9 +246,10 @@ namespace EnviaTrocas
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 25;
-            this.btnAdd.Text = "Adicionar";
+            this.btnAdd.Text = "Salvar";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnAdd_KeyPress);
             // 
             // label5
             // 
@@ -265,6 +267,7 @@ namespace EnviaTrocas
             this.txtQuantiti.Size = new System.Drawing.Size(100, 20);
             this.txtQuantiti.TabIndex = 21;
             this.txtQuantiti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQuantiti.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantiti_KeyPress);
             // 
             // btnProduct
             // 
@@ -674,16 +677,16 @@ namespace EnviaTrocas
             this.dgvProvider.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProvider_CellDoubleClick);
             this.dgvProvider.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvProvider_KeyUp);
             // 
-            // btnDeleteRegister
+            // btnNovo
             // 
-            this.btnDeleteRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteRegister.Location = new System.Drawing.Point(817, 197);
-            this.btnDeleteRegister.Name = "btnDeleteRegister";
-            this.btnDeleteRegister.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteRegister.TabIndex = 36;
-            this.btnDeleteRegister.Text = "Deletar";
-            this.btnDeleteRegister.UseVisualStyleBackColor = true;
-            this.btnDeleteRegister.Click += new System.EventHandler(this.btnDeleteRegister_Click);
+            this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNovo.Location = new System.Drawing.Point(736, 197);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(75, 23);
+            this.btnNovo.TabIndex = 37;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // FrmPrincipal
             // 
@@ -719,7 +722,6 @@ namespace EnviaTrocas
         private System.Windows.Forms.TabPage tblProduto;
         private System.Windows.Forms.TabPage tblFornecedor;
         private System.Windows.Forms.DataGridView dgvRegister;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnPrinter;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
@@ -766,6 +768,7 @@ namespace EnviaTrocas
         private System.Windows.Forms.Button btnCancelarProvider;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnDeleteRegister;
+        private System.Windows.Forms.Button btnNovo;
     }
 }
 

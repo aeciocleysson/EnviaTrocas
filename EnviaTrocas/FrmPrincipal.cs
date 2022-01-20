@@ -1,5 +1,6 @@
 ﻿using EnviaTrocas.Data;
 using EnviaTrocas.Model;
+using EnviaTrocas.Relat;
 using EnviaTrocas.ViewModel;
 using System;
 using System.Linq;
@@ -434,7 +435,7 @@ namespace EnviaTrocas
                 GetRegisterById(Convert.ToInt32(txtCodeExchange.Text));
                 ClearFieldsProducts();
             }
-            else if (!string.IsNullOrEmpty(txtCodeItens.Text) /*&& dtDataRegister.Text != "  /  /"*/)
+            else if (!string.IsNullOrEmpty(txtCodeItens.Text) && !string.IsNullOrEmpty(txtQuantiti.Text))
             {
                 viewModelItens.ProductId = Convert.ToInt32(txtCodeProduct.Text);
                 viewModelItens.Quantidade = Convert.ToInt32(txtQuantiti.Text);
@@ -635,6 +636,61 @@ namespace EnviaTrocas
         {
             var itens = new RegisterItensViewModel();
             DeleteItens(itens);
+        }
+
+        private void btnPrinter_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtCodeExchange.Text))
+            {
+                var report = new FrmRelatorioTrocas(Convert.ToInt32(txtCodeExchange.Text));
+                report.Show();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void btnAdd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtCodeProduct.Text))
+            {
+                if (e.KeyChar == 13)
+                {
+                    var viewModel = new RegisterViewModel();
+                    InsertRegister(viewModel);
+                    var itens = new RegisterItensViewModel();
+                    InsertRegisterItens(itens);
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void txtQuantiti_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtCodeProduct.Text))
+            {
+                if (e.KeyChar == 13)
+                {
+                    var viewModel = new RegisterViewModel();
+                    InsertRegister(viewModel);
+                    var itens = new RegisterItensViewModel();
+                    InsertRegisterItens(itens);
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            ClearFieldsRegister();
+            dgvRegister.DataSource = null;
         }
     }
 }
